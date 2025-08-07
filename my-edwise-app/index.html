@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoSpace - Modern Web Experience</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo" onclick="animateLogo()">CollegeVoice</div>
+                
+                <nav class="nav">
+                    <button class="nav-btn active" data-page="home">🏠 HOME</button>
+                    <button class="nav-btn" data-page="explore">🔍 Find Colleges</button>
+                    <button class="nav-btn" data-page="chat">💬 Student Chat</button>
+                    <button class="nav-btn" data-page="redeet">📝 Write Review</button>
+                    <button class="nav-btn" data-page="profile">👤 Profile</button>
+                    <button class="nav-btn" data-page="buy">⭐ Premium</button>
+                </nav>
+                
+                <div class="header-right">
+                    <div class="tokens" onclick="showTokenInfo()">🎓 CREDITS: <span id="tokenCount">10</span></div>
+                    <div class="theme-toggle" onclick="toggleTheme()"></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="hero">
+                <h1>Real Students, Real Reviews</h1>
+                <p>Discover authentic college experiences from students who've been there. Share your story, help others choose wisely! 🎓</p>
+            </section>
+
+            <section class="search-section">
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search colleges, courses, or ask students anything..." id="searchInput">
+                    <button class="voice-btn" onclick="toggleVoiceSearch()">🎤</button>
+                    <button class="search-btn" onclick="performSearch()">🔍</button>
+                </div>
+            </section>
+
+            <section class="quick-actions">
+                <div class="action-card" onclick="quickAction('ai')">
+                    <span class="icon">📚</span>
+                    <h3>Browse Reviews</h3>
+                    <p>Read honest student reviews</p>
+                </div>
+                <div class="action-card" onclick="quickAction('analytics')">
+                    <span class="icon">🏆</span>
+                    <h3>Top Colleges</h3>
+                    <p>Discover highest rated colleges</p>
+                </div>
+                <div class="action-card" onclick="quickAction('create')">
+                    <span class="icon">✍️</span>
+                    <h3>Write Review</h3>
+                    <p>Share your college experience</p>
+                </div>
+                <div class="action-card" onclick="quickAction('connect')">
+                    <span class="icon">🤝</span>
+                    <h3>Connect Students</h3>
+                    <p>Chat with current students</p>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="main-panel">
+                    <h2>🎯 Student Hub</h2>
+                    <p>Connect with real students, get honest reviews, and make informed decisions about your college journey. Every opinion matters!</p>
+                    
+                    <div style="margin-top: 2rem;">
+                        <h3>🔥 Recent Activity</h3>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
+                            <div style="text-align: center; padding: 1rem; background: var(--secondary-bg); border-radius: 10px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent);">2,847</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Reviews Written</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--secondary-bg); border-radius: 10px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--success);">450+</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Colleges Listed</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--secondary-bg); border-radius: 10px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--warning);">15K+</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Active Students</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>🔥 Trending Reviews</h3>
+                        <p>"Amazing campus life at XYZ College!"</p>
+                        <p>"IIT Delhi - Worth the hype?"</p>
+                        <p>"DU vs Private: Real comparison"</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3>📈 Your Impact</h3>
+                        <div style="background: var(--secondary-bg); height: 8px; border-radius: 4px; margin-top: 0.5rem;">
+                            <div style="background: var(--accent); height: 100%; width: 85%; border-radius: 4px; transition: width 0.5s ease;"></div>
+                        </div>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">85% Helpful Reviews</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3>🎯 Weekly Challenge</h3>
+                        <p>Write 3 honest reviews</p>
+                        <div style="margin-top: 0.5rem;">✅ ✅ ⭕</div>
+                        <small>Earn bonus credibility points!</small>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="ai-assistant">
+        <button class="ai-btn" onclick="toggleAI()" title="AI Assistant">🤖</button>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
